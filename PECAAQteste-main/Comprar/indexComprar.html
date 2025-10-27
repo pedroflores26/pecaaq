@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finalização de Compra</title>
+  <link rel="stylesheet" href="styleComprar.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <!-- Marca -->
+      <a href="http://127.0.0.1:5500/LandingPage/index.html" class="brand" aria-label="Página inicial">
+        <img src="imgComprar/LogoPecaAq4.png" alt="Logo" class="brand__logo" />
+        <span class="brand__name">PEÇAAQ</span>
+      </a>
+
+
+
+<!-- Navegação -->
+            <nav class="nav" aria-label="Principal">
+                <a href="../LaningPage/indexLandingPage.html">Home</a>
+                <a href="../Produtos/index.html">Comprar peças</a>
+                <a href="../Empresas/indexEmpresas.html">Empresas</a>
+            </nav>
+
+            <!-- Botão -->
+             <a class="btn-primary" href="../Login/indexLogin.html">Faça seu cadastro</a>
+
+      <!-- Toggle (Mobile) -->
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="checkout-container">
+    <!-- Imagem do produto -->
+    <div class="produto-imagem">
+      <img src="imgComprar/BateriaMoura60Ah.jpg" alt="Produto" />
+    </div>
+
+    <!-- Detalhes do produto -->
+    <div class="produto-detalhes">
+      <h1>Bateria Moura 60H</h1>
+      <p class="marca">
+        Marca: <span>Moura</span> | Referência: <span>1234567890123</span>
+      </p>
+      <div class="preco-promo">Economize R$ 150,00</div>
+      <div class="preco">
+        <span class="preco-avista">R$ 480,00,00 à vista</span>
+        <span class="parcelamento">Em até 10x R$ 48,00 sem juros</span>
+      </div>
+      <h3>O que você precisa saber sobre este produto:</h3>
+      <p>
+        Bateria Moura 60H para veículos automotivos, oferecendo alta durabilidade e desempenho confiável. Ideal para
+        partidas rápidas e fornecimento constante de energia elétrica aos sistemas do carro, garantindo segurança e
+        eficiência no dia a dia.
+      </p>
+    </div>
+
+    <!-- Caixa lateral de compra -->
+    <aside class="caixa-compra">
+      <div class="info-extra">
+        <p><strong>Devolução Grátis</strong> em até 7 dias.</p>
+        <p><strong>Compra Garantida</strong> ou seu dinheiro de volta.</p>
+      </div>
+
+      <label for="quantidade">Quantidade:</label>
+      <select id="quantidade">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+
+      </select>
+      <button id="btn-finalizar" class="btn-comprar">COMPRAR AGORA</button>
+      <!-- Botão de Adicionar ao Carrinho -->
+      <button id="add-to-cart" class="btn-carrinho">Adicionar ao Carrinho</button>
+
+      <label for="cep">CEP</label>
+      <input type="text" id="cep" placeholder="Digite seu CEP" />
+      <button id="btn-frete" class="btn-frete">CALCULAR FRETE</button>
+
+
+
+
+    </aside>
+  </main>
+
+  <!-- Carrossel -->
+  <section class="carrossel-container">
+    <h2>Produtos semelhantes</h2>
+    <div class="carrossel">
+      <div class="carrossel-track-container">
+        <ul class="carrossel-track">
+          <li class="card">
+            <img src="imgComprar/AmortecedorMonroe.jpg" alt="Kit Corrente Honda" />
+            <div class="desconto">-30%</div>
+            <p>Amortecedor Monroe - Código 350</p>
+            <p class="preco-antigo">R$ 500,00</p>
+            <p class="preco">R$ 350,00</p>
+            <p class="parcelamento">Em até 10x R$ 35,00 sem juros</p>
+            <button class="btn-comprar">COMPRAR AGORA</button>
+          </li>
+          <li class="card">
+            <img src="imgComprar/CorreiaDentadaGates.jpg" alt="Cilindro Mestre" />
+            <div class="desconto">-30%</div>
+            <p>Correia Dentada Gates - Código 150</p>
+            <p class="preco-antigo">R$ 220,00</p>
+            <p class="preco">R$ 150,00</p>
+            <p class="parcelamento">Em até 6x R$ 25,00 sem juros</p>
+            <button class="btn-comprar">COMPRAR AGORA</button>
+          </li>
+          <li class="card">
+            <img src="imgComprar/OleoLubrificanteShell5W30.jpg" alt="Filtro Combustível" />
+            <div class="desconto">-10%</div>
+            <p>Óleo Lubrificante Shell 5W30 - Código 95,50</p>
+            <p class="preco-antigo">R$ 120,00</p>
+            <p class="preco">R$ 95,50</p>
+            <p class="parcelamento">Em até 5x R$ 19,10 sem juros</p>
+            <button class="btn-comprar">COMPRAR AGORA</button>
+          </li>
+          <li class="card">
+            <img src="imgComprar/PastilhadeFreioBosch-Corolla2016.jpg" alt="Porca Fixação" />
+            <div class="desconto">-30%</div>
+            <p>Pastilha de Freio Bosch - Corolla 2016</p>
+            <p class="preco-antigo">R$ 350,00</p>
+            <p class="preco">R$ 260,00</p>
+            <p class="parcelamento">Em até 6x R$ 43,33 sem juros</p>
+            <button class="btn-comprar">COMPRAR AGORA</button>
+          </li>
+          <li class="card">
+            <img src="imgComprar/PastilhaFreioBoschGol2015.jpg" alt="Escapamento" />
+            <div class="desconto">-20%</div>
+            <p>Pastilha de Freio Bosch - Gol 2015</p>
+            <p class="preco-antigo">R$ 320,00</p>
+            <p class="preco">R$ 250,50</p>
+            <p class="parcelamento">Em até 6x R$ 41,75 sem juros</p>
+          <button class="btn-comprar">COMPRAR AGORA</button>
+          </li>
+
+          <!-- cards 6 a 10 -->
+          <li class="card">
+            <img src="imgComprar/VelasNGKPlatinum.jpg" alt="Kit Embreagem" />
+            <div class="desconto">-30%</div>
+            <p>Velas NGK Platinum</p>
+            <p class="preco-antigo">R$ 100,00</p>
+            <p class="preco">R$ 78,80</p>
+            <p class="parcelamento">Em até 4x R$ 19,70 sem juros</p>
+            <button class="btn-comprar">COMPRAR AGORA</button>
+          </li>
+          
+      </div>
+
+      <div class="carrossel-controls">
+        <div class="carrossel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Avaliações -->
+  <section class="avaliacoes-container">
+    <h2>Avaliações dos Clientes</h2>
+    <div class="avaliacoes-lista" id="avaliacoes-lista">
+      <!-- Avaliações vão aparecer aqui -->
+    </div>
+
+    <form id="form-avaliacao" class="form-avaliacao">
+      <h3 id="form-title">Deixe sua avaliação</h3>
+
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required />
+
+      <label for="estrela">Nota:</label>
+      <div id="estrela-container"></div>
+
+      <label for="comentario">Comentário:</label>
+      <textarea id="comentario" rows="3" required></textarea>
+
+      <button type="submit" id="btn-submit">Enviar Avaliação</button>
+      <button type="button" id="btn-cancel" style="display:none; margin-top: 10px;">Cancelar Alteração</button>
+    </form>
+  </section>
+
+  <!-- Modal de pagamento -->
+  <div id="modal-pagamento" class="modal">
+    <div class="modal-content">
+      <span class="fechar" id="fechar">&times;</span>
+      <h2>Escolha o método de pagamento</h2>
+
+      <div class="opcoes-pagamento">
+        <button class="metodo" data-metodo="cartao">💳 Cartão</button>
+        <button class="metodo" data-metodo="pix">⚡ Pix</button>
+      </div>
+
+      <!-- Formulário Cartão -->
+      <div id="pagamento-cartao" class="form-pagamento hidden">
+        <label for="num-cartao">Número do Cartão</label>
+        <input id="num-cartao" type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" />
+        <label for="nome-cartao">Nome no Cartão</label>
+        <input id="nome-cartao" type="text" placeholder="Nome completo" />
+        <label for="validade-cartao">Validade</label>
+        <input id="validade-cartao" type="text" placeholder="MM/AA" maxlength="5" />
+        <label for="cvv-cartao">CVV</label>
+        <input id="cvv-cartao" type="text" placeholder="123" maxlength="3" />
+        <button id="btn-pagar-cartao" class="btn-comprar">Pagar com Cartão</button>
+      </div>
+
+      <!-- Pagamento Pix -->
+      <div id="pagamento-pix" class="form-pagamento hidden">
+        <p>Escaneie o QR Code ou copie o código abaixo:</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=chavepix@empresa.com"
+          alt="QR Code Pix" />
+        <textarea readonly>chavepix@empresa.com</textarea>
+        <button id="btn-pagar-pix" class="btn-comprar">Pagar com Pix</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Endereço -->
+  <div id="modal-endereco" class="modal">
+    <div class="modal-content">
+      <span class="fechar" id="fechar-endereco">&times;</span>
+      <h2>Informe seu endereço para entrega</h2>
+      <form id="form-endereco">
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" required />
+
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" required />
+
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" required />
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" required />
+
+        <label for="cep-endereco">CEP:</label>
+        <input type="text" id="cep-endereco" required />
+
+        <button type="submit" class="btn-comprar">Confirmar Endereço</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Sucesso -->
+  <div id="modal-sucesso" class="modal">
+    <div class="modal-content">
+      <span class="fechar" id="fechar-sucesso">&times;</span>
+      <h2>Compra Bem Sucedida!</h2>
+      <p>Seu pedido foi confirmado com sucesso.</p>
+      <p><strong>Código de Rastreio:</strong> <span id="codigo-rastreio"></span></p>
+      <button id="btn-fechar-sucesso" class="btn-comprar">Fechar</button>
+    </div>
+  </div>
+
+  <div id="carrinhoModal" class="modal">
+    <div class="modal-content">
+      <span id="fecharCarrinho" class="fechar">&times;</span>
+      <h2>🛒 Seu Carrinho</h2>
+      <ul id="listaCarrinho"></ul>
+      <p><strong>Total:</strong> R$ <span id="totalCarrinho">0.00</span></p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Minha Conta</a></li>
+          <li><a href="#">Meus Pedidos</a></li>
+          <li><a href="#">Empresas</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Atendimento</h4>
+        <ul>
+          <p><strong>E-mail</strong></p>
+          <li><a href="#">PeçaAq2025@gmail.com.br</a></li>
+          <p><strong>Telefone:</strong></p>
+          <li><a href="#">(51) 98031-4793</a></li>
+          <p><strong>WhatsApp:</strong></p>
+          <li><a href="#">(51) 98031-4793</a></li>
+      </div>
+      <div class="footer-section">
+        <h4>Informações</h4>
+        <ul>
+          <li><a href="#">Quem somos</a></li>
+          <li><a href="#">Soluções</a></li>
+          <li><a href="#">Diferenciais</a></li>
+          <li><a href="#">Modelo de Negócio</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Privacidade</h4>
+        <ul>
+          <li><a href="#">Política de Priacidade</a></li>
+          <li><a href="#">Política de Entrega</a></li>
+          <li><a href="#">Garantia, Trocas e Devoluções</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="copyright-img">
+        <img src="imgComprar/LogoPecaAq4.png" alt="Logo" class="brand__logo" />
+        <span class="footer__logo">PEÇAAQ</span>
+      </div>
+
+      <div>
+        &copy; 2025 PeçaAq. Todos os direitos reservados.
+      </div>
+
+      <div class="social-buttons">
+        <a href="https://www.instagram.com" target="_blank" class="social-btn instagram"><img src="imgComprar/Instagram.svg"
+            alt=""></a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-btn linkedin"><img src="imgComprar/Linkedin.svg"
+            alt=""></a>
+        <a href="mailto:contato@pecaaq.com.br" class="social-btn gmail"><img src="imgComprar/Facebook.svg" alt=""></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PEÇAAQ — Ecossistema de Autopeças</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleEmpresas.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__inner">
+      <!-- Marca -->
+      <a href="http://127.0.0.1:5500/LandingPage/index.html" class="brand" aria-label="Página inicial">
+        <img src="imgEmpresas/LogoPecaAq4.png" alt="Logo" class="brand__logo" />
+        <span class="brand__name">PEÇAAQ</span>
+      </a>
+
+      <!-- Navegação -->
+            <nav class="nav" aria-label="Principal">
+                <a href="../LaningPage/indexLandingPage.html">Home</a>
+                <a href="../Produtos/index.html">Comprar peças</a>
+                <a href="../Empresas/indexEmpresas.html">Empresas</a>
+            </nav>
+
+            <!-- Botão -->
+             <a class="btn-primary" href="../Login/indexLogin.html">Faça seu cadastro</a>
+
+      <!-- Toggle (Mobile) -->
+      <button class="nav__toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero fino (barra com título) -->
+  <section id="inicio" class="hero">
+    <div class="container">
+      <h1>Conectando lojas, distribuidores e fabricantes às oficinas</h1>
+      <p>Leads qualificados • Logística rápida • E-commerce white-label</p>
+    </div>
+  </section>
+
+  <!-- Empresas (acima dos produtos) -->
+  <section id="empresas" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Empresas em destaque</h2>
+        <div class="controls">
+          <input id="buscaEmpresas" type="search" placeholder="Buscar empresa..." />
+        </div>
+      </div>
+
+      <div id="gridEmpresas" class="grid cards-empresas">
+        <!-- Cards de empresas gerados via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Funcionalidades (linha com ícones redondos) -->
+  <section class="section features">
+    <div class="container">
+      <h3>Funcionalidades</h3>
+      <ul class="features-row">
+        <li>
+          <div class="icon-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 12h18M12 3v18" />
+            </svg>
+          </div>
+          <span>Catálogo Unificado</span>
+        </li>
+        <li>
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 7h16v10H4zM4 7l8 6 8-6" />
+            </svg>
+          </div>
+          <span>Orçamentos Rápidos</span>
+        </li>
+        <li>
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 12l4 4 7-7 7 7" />
+            </svg>
+          </div>
+          <span>Logística Integrada</span>
+        </li>
+        <li>
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 1l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-8.5L2 8h7z" />
+            </svg>
+          </div>
+          <span>Avaliações</span>
+        </li>
+        <li>
+          <div class="icon-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M6 6h12v12H6zM9 9h6v6H9z" />
+            </svg>
+          </div>
+          <span>White-label</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Produtos (abaixo das empresas) -->
+  <section id="produtos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Produtos</h2>
+        <div class="controls">
+          <select id="filtroCategoria">
+            <option value="todos">Todas categorias</option>
+            <option value="carro">Carro</option>
+            <option value="moto">Moto</option>
+          </select>
+          <input id="buscaProdutos" type="search" placeholder="Buscar produto..." />
+        </div>
+      </div>
+
+      <!-- duas fileiras (responsivo em grid) -->
+      <div id="gridProdutos" class="grid cards-produtos">
+        <!-- Cards de produtos gerados via JS -->
+      </div>
+    </div>
+  </section>
+
+  <div class="container copyright"> <span id="ano"></span></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h4>Links Úteis</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Minha Conta</a></li>
+          <li><a href="#">Meus Pedidos</a></li>
+          <li><a href="#">Empresas</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Atendimento</h4>
+        <ul>
+          <p><strong>E-mail</strong></p>
+          <li><a href="#">PeçaAq2025@gmail.com.br</a></li>
+          <p><strong>Telefone:</strong></p>
+          <li><a href="#">(51) 98031-4793</a></li>
+          <p><strong>WhatsApp:</strong></p>
+          <li><a href="#">(51) 98031-4793</a></li>
+      </div>
+      <div class="footer-section">
+        <h4>Informações</h4>
+        <ul>
+          <li><a href="#">Quem somos</a></li>
+          <li><a href="#">Soluções</a></li>
+          <li><a href="#">Diferenciais</a></li>
+          <li><a href="#">Modelo de Negócio</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Privacidade</h4>
+        <ul>
+          <li><a href="#">Política de Priacidade</a></li>
+          <li><a href="#">Política de Entrega</a></li>
+          <li><a href="#">Garantia, Trocas e Devoluções</a></li>
+          <li><a href="#">Termos de uso</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="copyright-img">
+        <img src="imgEmpresas/LogoPecaAq4.png" alt="Logo" class="brand__logo" />
+        <span class="footer__logo">PEÇAAQ</span>
+      </div>
+
+      <div>
+        &copy; 2025 PeçaAq. Todos os direitos reservados.
+      </div>
+
+      <div class="social-buttons">
+        <a href="https://www.instagram.com" target="_blank" class="social-btn instagram"><img src="imgEmpresas/Instagram.svg"
+            alt=""></a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-btn linkedin"><img src="imgEmpresas/Linkedin.svg"
+            alt=""></a>
+        <a href="mailto:contato@pecaaq.com.br" class="social-btn gmail"><img src="imgEmpresas/Facebook.svg" alt=""></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Modal de ofertas do produto -->
+  <dialog id="modalOfertas">
+    <form method="dialog">
+      <header class="modal-head">
+        <h4 id="modalTitulo">Ofertas</h4>
+        <button aria-label="Fechar" class="btn-close">×</button>
+      </header>
+      <div id="listaOfertas" class="ofertas"></div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

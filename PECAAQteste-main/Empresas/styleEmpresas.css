@@ -1,0 +1,631 @@
+/* =======================================================
+   VARIÁVEIS GLOBAIS (cores, fontes, sombras, radius etc.)
+   ======================================================= */
+:root {
+  --bg: #ffffff;              /* fundo escuro elegante */
+  --panel: #0f172a;           /* cartões/áreas */
+  --muted: #94a3b8;           /* texto apagado */
+  --text: #e6eaf2;            /* texto padrão */
+  --brand: #4f46e5;           /* roxo-azulado (principal) */
+  --brand-2: #22d3ee;         /* ciano p/ detalhes */
+  --stroke: #1f2a44;          /* bordas */
+  --success: #10b981;         /* verde de sucesso */
+  --radius: 16px;             /* arredondamento padrão */
+  --shadow: 0 10px 30px rgba(0, 0, 0, .35); /* sombra padrão */
+}
+
+/* =======================================================
+   RESET / BASE
+   ======================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #0a0f1c 0%, #0b1220 60%, #0a0f1c 100%);
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* =======================================================
+   HEADER - INÍCIO
+   ======================================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #0D1B2A;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 2rem;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* antes era center */
+  max-width: 1200px;
+  height: 110px;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+/* Marca (logo + nome) */
+.brand {
+  display: flex;
+  align-items: center;
+    gap: 10px;
+  text-decoration: none;
+}
+
+.brand__logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.brand__name {
+    font-size: 26px; /* aumentei o tamanho da fonte */
+    font-weight: 800; /* deixei mais grossa */
+    color: #fff;
+    letter-spacing: 2px; /* espaçamento entre letras */
+    text-transform: uppercase; /* deixa em maiúsculas (opcional) */
+}
+
+/* Barra de busca */
+.search-wrap {
+  flex: 1;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  position: relative; /* <-- ESSENCIAL */
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid transparent;
+  font-size: 15px;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+.search-wrap input:focus {
+  outline: none;
+  border-color: var(--accent, #2e8b3a);
+  box-shadow: 0 0 0 3px rgba(46, 139, 58, 0.2);
+}
+
+
+ /* Lista de sugestões */
+.suggestions {
+  position: absolute;
+  top: 100%; /* aparece logo abaixo do input */
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 200; /* acima de tudo */
+}
+
+/* Esconde a lista */
+.suggestions.hidden {
+  display: none;
+}
+
+/* Cada item da lista */
+.suggestions li {
+  padding: 10px 15px;
+  font-size: 15px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Hover bonito */
+.suggestions li:hover {
+  background: #f2f4f8;
+}
+
+/* Para destacar parte do texto pesquisado */
+.suggestions li strong {
+  color: var(--accent, #2e8b3a);
+}
+/* Navegação */
+.nav {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto; /* empurra a nav para a direita */
+}
+
+.nav a {
+  padding: .5rem .75rem;
+  border-radius: 6px;
+  color: #c8d2ee;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  background: #162139;
+  color: #fff;
+}
+
+/* Botão destaque (cadastro/login) */
+.btn-primary {
+  background: var(--accent, #2e8b3a);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #16712f;
+  transform: translateY(-2px);
+}
+
+/* Toggle menu (mobile) */
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.nav__toggle span {
+  width: 22px;
+  height: 2px;
+  background: #c8d2ee;
+  border-radius: 2px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .search-wrap {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav__toggle {
+    display: flex;
+  }
+}
+/* =======================================================
+   HEADER - FIM
+   ======================================================= */
+
+/* =======================================================
+   HERO (banner inicial)
+   ======================================================= */
+.hero {
+  border-bottom: 1px solid var(--stroke);
+  background:
+    radial-gradient(1200px 300px at 50% -20%, rgba(79, 70, 229, .25), transparent 60%),
+    radial-gradient(900px 300px at 70% -10%, rgba(34, 211, 238, .18), transparent 60%);
+}
+.hero .container {
+  padding: 36px 0 28px;
+}
+.hero h1 {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 3.2vw, 34px);
+}
+.hero p {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =======================================================
+   SEÇÕES GERAIS
+   ======================================================= */
+.section {
+  padding: 36px 0;
+}
+.section-head {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.section h2 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 28px);
+}
+.controls {
+  display: flex;
+  gap: 10px;
+}
+.controls input[type="search"],
+.controls select {
+  background: var(--panel);
+  border: 1px solid var(--stroke);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  outline: none;
+  min-width: 180px;
+}
+
+/* =======================================================
+   GRIDS DE CARDS (empresas / produtos)
+   ======================================================= */
+.grid {
+  display: grid;
+  gap: 14px;
+}
+.cards-empresas {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+.cards-produtos {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* =======================================================
+   CARDS
+   ======================================================= */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform .18s ease, border-color .18s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #2b375a;
+}
+.card-body {
+  padding: 14px;
+}
+.card .tag {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(79, 70, 229, .15);
+  border: 1px solid rgba(79, 70, 229, .4);
+  color: #c7d2fe;
+}
+
+/* Logo dentro do card de empresa */
+.logo-wrap {
+  height: 96px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(79, 70, 229, .2), rgba(34, 211, 238, .12));
+  border-bottom: 1px solid var(--stroke);
+}
+.logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  color: #0b1220;
+  background: conic-gradient(from 200deg, #22d3ee, #4f46e5, #22d3ee);
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, .25);
+}
+
+.card h4 {
+  margin: 8px 0 6px;
+  font-size: 16px;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Card de produto */
+.card-product .media {
+  height: 140px;
+  border-bottom: 1px solid var(--stroke);
+  background:
+    radial-gradient(600px 200px at 50% -40%, rgba(34, 211, 238, .18), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .01));
+  display: grid;
+  place-items: center;
+}
+.price {
+  font-weight: 800;
+}
+
+/* =======================================================
+   BOTÕES
+   ======================================================= */
+.btn,
+.btn-link {
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 700;
+}
+.btn {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: #0b1220;
+}
+.btn:hover {
+  filter: saturate(1.1);
+}
+.btn-link {
+  background: transparent;
+  color: #c7d2fe;
+}
+
+/* =======================================================
+   FEATURES (linha de ícones redondos)
+   ======================================================= */
+.features {
+  border-block: 1px solid var(--stroke);
+  background: rgba(255, 255, 255, .02);
+}
+.features h3 {
+  margin: 0 0 14px;
+}
+.features-row {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+.features-row li {
+  min-width: 160px;
+  display: grid;
+  gap: 8px;
+  place-items: center;
+  text-align: center;
+}
+.icon-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, .6), rgba(34, 211, 238, .4));
+  border: 1px solid rgba(255, 255, 255, .25);
+  box-shadow: var(--shadow);
+}
+.icon-circle svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #0b1220;
+  stroke-width: 2;
+}
+
+/* =======================================================
+   FOOTER - INÍCIO
+   ======================================================= */
+.site-footer {
+    background:#0a0f1c;
+    background-size: cover; /* cobre todo o footer */
+    color: #eee;
+    padding: 40px;
+    font-size: 14px;
+    height: 500px;
+}
+
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    /* centraliza horizontalmente */
+    gap: 160px;
+    /* distância entre as colunas, ajuste se quiser */
+    padding-bottom: 25px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    text-align: left;
+    /* mantém os textos alinhados à esquerda dentro de cada coluna */
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+.footer-section {
+    gap: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent);
+    /* Altera a cor do link ao passar o mouse */
+}
+
+.copyright {
+    font-size: 13px;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 160px; /* distância entre os 3 blocos */
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.copyright-img {
+    display: flex; 
+    align-items: center; /* alinha verticalmente logo e texto */
+    gap: 10px; /* espaço entre logo e nome */
+}
+
+.footer_logo {
+    width: 40px; /* ajuste conforme o tamanho da sua logo */
+    height: auto;
+}
+
+.footer__logo {
+    font-size: 26px; /* aumentei o tamanho da fonte */
+    font-weight: 800; /* deixei mais grossa */
+    color: #fff;
+    letter-spacing: 2px; /* espaçamento entre letras */
+    text-transform: uppercase; /* deixa em maiúsculas (opcional) */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.social-buttons {
+    display: flex;          /* coloca os botões lado a lado */
+    gap: 10px;              /* espaço entre eles */
+    justify-content: center; /* centraliza no container */
+    margin-top: 15px;       /* opcional: dá um respiro */
+}
+
+.social-btn {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.social-btn img {
+    width: 22px;
+    height: 22px;
+}
+
+.social-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+/* =======================================================
+   FOOTER - FIM
+   ======================================================= */
+
+/* =======================================================
+   MODAL (ofertas do produto)
+   ======================================================= */
+dialog {
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 0;
+  background: var(--panel);
+  color: var(--text);
+  width: min(540px, 92%);
+}
+dialog::backdrop {
+  background: rgba(0, 0, 0, .55);
+}
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--stroke);
+}
+.btn-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  border: 1px solid var(--stroke);
+  cursor: pointer;
+}
+.ofertas {
+  padding: 10px 14px 16px;
+  display: grid;
+  gap: 10px;
+}
+.oferta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .03);
+}
+.oferta strong {
+  font-size: 15px;
+}
+.oferta small {
+  color: var(--muted);
+}
+.oferta .btn {
+  padding: 8px 10px;
+}
+
+/* =======================================================
+   RESPONSIVIDADE
+   ======================================================= */
+@media (max-width:640px) {
+  .nav {
+    gap: 8px;
+  }
+  .controls input,
+  .controls select {
+    min-width: 140px;
+  }
+}
